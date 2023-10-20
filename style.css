@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+/* Reset default margin and padding */
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+}
+
+header {
+  position: absolute;
+  z-index: 9;
+  top: 2%;
+  left: 4%;
+  right: 4%;
+}
+
+/* Apply a minimum height of 100vh to the card */
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
+
+nav ul.bottom {
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+/* nav .top li {
+  justify-content: space-between;
+} */
+
+.top-card {
+  height: 45vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-card img {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bottom-card {
+  height: 45vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.top-card img,
+.bottom-card img {
+  position: absolute;
+  width: 100%;
+  filter: blur(3px);
+  opacity: 0.8;
+}
+
+.fa-phone {
+  transform: rotate(135deg) scale(0.7);
+}
+
+.end-call {
+  background-color: red;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-left: auto;
+}
+
+.fa-solid {
+  color: white;
+}
+
+.circle {
+  width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.top-card .circle {
+  background-image: url(./images/girl-resized.jpg);
+  margin: auto;
+  z-index: 8;
+}
+
+.bottom-card .circle {
+  background-image: url(./images/guy-resized.jpg);
+  z-index: 5;
+}
+
+.top-card .circle,
+.bottom-card .circle {
+  width: 120px; /* Set the width to match the height for a perfect circle */
+  height: 120px;
+  border-radius: 50%; /* Set the border to 50% to create a circle */
+  background-size: cover; /* Make the background image cover the entire circle */
+  background-position: center; /* Center the background image in the circle */
+}
+
+/* Define styles for mobile and tablet view (when the viewport is narrower than a specified width) */
+@media (min-width: 400px) {
+  .top-card img,
+  .bottom-card img {
+    filter: blur(5px);
+  }
+
+  /* header {
+    margin: 25px 25px 0;
+  } */
+
+  .top {
+    align-items: center; /* Vertically center the items */
+  }
+}
+
+/* Define styles for desktop view (when the viewport is wider than a specified width) */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+  }
+  .top-card {
+    width: 49%; /* 50% width for left column */
+    margin-right: auto;
+  }
+  .bottom-card {
+    width: 49%; /* 50% width for right column */
+  }
+  .top-card img,
+  .bottom-card img {
+    filter: blur(8px);
+    opacity: 0.5;
+    border-radius: 0;
+  }
+  .top-card,
+  .bottom-card {
+    border-radius: 30px;
+    margin: 20px;
+    min-height: 80vh;
+  }
+}
